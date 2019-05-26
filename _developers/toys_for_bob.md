@@ -1,0 +1,15 @@
+---
+developer_id: "111"
+name: "Toys for Bob"
+description: "Toys for Bob is a band of inventors, makers, and magicians who have been developing whimsical, charming AAA games since 1989. We play in a former military hangar that’s been converted into a colorful, tiki-themed, dog-friendly paradise just 20 minutes north of the San Francisco Golden Gate bridge. Best known for inventing the “Toys to Life” genre with Skylanders, we are a team of out-of-the-box thinkers who are driven to inspire love, joy, and laughter through epic AAA entertainment. If you love games, are great at what you do, and don’t take yourself too seriously, we’d love for you to be a part of the family! Come join an Activision studio that’s part of Fortune’s “100 Best Companies to Work For”."
+established: "1989"
+country: "United States"
+status: "active"
+parentCompany: "Activision"
+official : "https://www.toysforbob.com/"
+1st: "Star Control-1990"
+2nd: "Tony Hawk's Downhill Jam-2006"
+3th: "Spyro Reignited Trilogy-2018"
+3thLink: "../videogames/Spyro-Reignited-Trilogy"
+image : "img/dev1.jpg" 
+---

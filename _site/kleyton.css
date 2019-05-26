@@ -1,0 +1,188 @@
+/*  KEYFRAMES  */
+
+
+
+/*  GENERAL  */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body{
+    background-color:#0e0f16 !important;
+}
+
+div{
+    padding: 0;
+    
+}
+h1{
+    padding: 20px;
+}
+.row, .row div{
+    margin-right: 0!important;
+    margin-left: 0!important;
+    padding: 0!important;
+}
+
+/*  HEADER  */
+
+header{
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid blue;
+}
+
+div.logo{
+    height: 110px;
+    width: 100%;
+    background-image: url("images/logo.png");
+    background-position: center;
+    background-size: cover;
+}
+
+div.title{
+    text-align: center;
+}
+
+
+/*  CONTAINER  */
+
+
+#container{
+    margin: 0 auto;
+    width: 1200px;
+    
+    padding: 10px;
+    text-align: center;
+}
+
+/* ******* SLIDER ******* */
+
+#slider{
+    width: 100%;
+    height: 500px;
+    margin: 5% auto 0 auto;
+    padding: 2%;
+    border: 1px solid #fff;
+}
+#slider div{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    float: left;
+    width: 23%;
+    height: 100%;
+    margin: 0 1% 0 1%;
+}
+
+
+
+#sliderButton{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+#sliderButton div{
+    margin: 1%;
+    display: inline-block;
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+#sliderButton div:hover{
+    cursor: pointer;
+    background-color: green;
+    transition: 1s;
+}
+#slider div:hover{
+    box-shadow: inset black 10px 10px 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+#slider div.visible{
+    display: inline-block;
+}
+#slider .element1{
+    background-image: url("https://i.pinimg.com/originals/52/1c/ae/521caea344745eeb750746771505167a.jpg");
+}
+#slider .element2{
+    background-image: url("https://wallpapershome.com/images/pages/ico_v/13472.jpg");
+}
+#slider .element3{
+    background-image: url("https://www.gamewallpapers.com/img_script/mobile_dir/img.php?src=wallpaper_dragon_age_inquisition_08.jpg&width=450&height=800&crop-to-fit");
+}
+#slider .element4{
+    background-image: url("https://www.gamewallpapers.com/img_script/mobile_dir2/img.php?src=wallpaper_league_of_legends_42_1440x2560.jpg&width=450&height=800&crop-to-fit");
+}
+#slider .element5{
+    background-image: url("https://www.gamewallpapers.com/img_script/mobile_dir/img.php?src=wallpaper_tomb_raider_fan_art_01.jpg&width=450&height=800&crop-to-fit");
+}
+#slider .element6{
+    background-image: url("https://www.syanart.com/wp-content/uploads/2019/01/fortnite-Wall-6-1024x1820.jpg");
+}
+#slider  .element7{
+    background-image: url("http://www.availableideas.com/wp-content/uploads/2016/02/Black-And-White-Chess-Board-Pieces-iPhone-6-Plus-HD-Wallpaper.jpg");
+}
+#slider .element8{
+    background-image: url("http://inceptionwallpaper.com/wp-content/uploads/2018/09/wallpaper-holiday-halloween-31-october-pumpkin-host-forest-for-halloween-wallpaper-vertical.jpg");
+}
+
+
+.l-heading {
+    font-size: 3rem;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+
+/* last slider */
+.swiper-container {
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 50px;
+    
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 380px;
+    background: #fff;
+}
+.swiper-slide .imageBox{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.swiper-slide .imageBox img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide .details{
+    box-sizing: border-box;
+    padding: 20px;
+}
+.swiper-slide .details h3{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.swiper-slide .details h3 span{
+    font-size: 16px;
+    color: #ff8f00;
+}

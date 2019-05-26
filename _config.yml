@@ -1,0 +1,22 @@
+collections:
+  developers:
+    output: true
+  videogames:
+    output: true
+
+defaults:
+  - scope:
+      path: "_developers"
+      type: "developers"
+    values:
+      layout: "developer"
+  - scope:
+      path: "_videogames"
+      type: "videogames"
+    values:
+      layout: "videogame"
+  - scope:
+      path: "_publishers"
+      type: "publishers"
+    values:
+      layout: "publishers"

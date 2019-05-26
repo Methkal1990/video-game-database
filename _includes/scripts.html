@@ -1,0 +1,115 @@
+<script>
+  function openSlideMenu() {
+    document.getElementById("side-menu").style.width = "250px";
+    //document.getElementById('main').style.marginLeft='250px';
+  }
+  function closeSlideMenu() {
+    document.getElementById("side-menu").style.width = "0";
+    //document.getElementById('main').style.marginLeft='0';
+  }
+
+  // search engine
+  function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // filter engine
+  function filterForm() {
+    var form,
+      name,
+      filterName,
+      rating,
+      filterRating,
+      genre,
+      filterGenre,
+      year1,
+      year2,
+      ul,
+      li,
+      itemName,
+      i,
+      txtValueName,
+      filtery1,
+      filtery2;
+
+    form = document.getElementById("filterForm");
+    name = document.getElementById("filterName");
+    rating = document.getElementById("filterRating");
+    genre = document.getElementById("filterGenre");
+    year1 = document.getElementById("filteryear1");
+    year2 = document.getElementById("filteryear2");
+
+    filterName = name.value.toUpperCase();
+    filterRating = rating.options[rating.selectedIndex].text.toUpperCase();
+    filterGenre = genre.options[genre.selectedIndex].text.toUpperCase();
+    filtery1 = year1.options[year1.selectedIndex].text.toUpperCase();
+    filtery2 = year2.options[year2.selectedIndex].text.toUpperCase();
+
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+    for (i = 0; i < li.length; i++) {
+      itemName = li[i].getElementsByTagName("a")[0];
+      itemRating = li[i].getElementsByTagName("span")[0];
+      itemGenre = li[i].getElementsByTagName("span")[2];
+      itemYear = li[i].getElementsByTagName("span")[3];
+      txtValueName = itemName.textContent || itemName.innerText;
+      txtValueRating = itemRating.textContent || itemRating.innerText;
+      txtValueGenre = itemGenre.textContent || itemGenre.innerText;
+      txtValueYear = itemYear.textContent || itemYear.innerText;
+
+      if (
+        txtValueName.toUpperCase().indexOf(filterName) > -1 &&
+        (txtValueRating.toUpperCase() == filterRating &&
+          txtValueGenre.toUpperCase() == filterGenre &&
+          (txtValueYear.toUpperCase() >= filtery1 &&
+            txtValueYear.toUpperCase() <= filtery2))
+      ) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // sort engine
+  function sortMe() {
+    var ul = document.getElementById('myUL'),
+        para = ul.getElementsByClassName('foo'),
+        nameAsc = document.getElementById("sortEng"),
+        sortName = nameAsc.options[nameAsc.selectedIndex].text;
+        
+        if (sortName == "Name Descending") {
+          
+    var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent > b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+        else if (sortName == "Name Ascending") {
+          var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent < b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+  }
+</script>

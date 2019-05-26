@@ -1,0 +1,205 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    
+<link rel="stylesheet" href="../css/library.css">
+<link rel="stylesheet" href="../css/methkal-style.css" />
+</head>
+<title>AboutUs.html</title>
+<body>
+<nav class="navbar">
+      <span class="open-slide">
+        <a href="#" onclick="openSlideMenu()" id="toggle">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+          </svg>
+        </a>
+      </span>
+    <ul class="navbar-nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/categories.html">Categories</a></li>
+        <li><a href="/AboutUs.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="AboutUs.html">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+<div class="wrapper">
+
+  <div id="about">
+          <h1 class="lg-heading text-light my-2t">About <span class="text-secondary">Us</span></h1>
+          <h2 class="sm-heading text-light my-3">Who are we ?</h2>
+          <div class="about-info">
+            <img src="img/about.jpg" alt="" class="bio-image" />
+            <div class="bio">
+              <h3 class="text-secondary">
+                BIO
+              </h3>
+              <p>
+                A Group of students in ITB (institut tecnologic de barcelona) who are enthusiastic about web development and videgames programming.
+              </p>
+            </div>
+            <div class="job job-1">
+              <h3 class="text-light">Methkal</h3>
+              <h6 class="text-secondary py-1tb">Full stack developer</h6>
+              <p>
+                Implements the frontend categories, about and contact pages and managing the project.
+              </p>
+            </div>
+            <div class="job job-2">
+              <h3 class="text-light">Esteban</h3>
+              <h6 class="text-secondary py-1tb">Backend Development</h6>
+              <p>
+                Implements Jekyll logic in the project
+              </p>
+            </div>
+            <div class="job job-3">
+              <h3 class="text-light">Kleyton</h3>
+              <h6 class="text-secondary py-1tb">frontend developer</h6>
+              <p>
+                Implements the homepage
+              </p>
+            </div>
+            <div class="job job-4">
+              <h3 class="text-light">Alex</h3>
+              <h6 class="text-secondary py-1tb">frontend developer and data expert</h6>
+              <p>
+                Gathering project data and implementing the content.
+              </p>
+            </div>
+          </div>
+        </div>
+</div>
+      <footer class="footer">
+        <p>
+            ODB 2019, All rights Reserved
+        </p>
+        <p>
+            Privacy Policy | Terms Of Use
+        </p>
+    </footer>
+<script>
+  function openSlideMenu() {
+    document.getElementById("side-menu").style.width = "250px";
+    //document.getElementById('main').style.marginLeft='250px';
+  }
+  function closeSlideMenu() {
+    document.getElementById("side-menu").style.width = "0";
+    //document.getElementById('main').style.marginLeft='0';
+  }
+
+  // search engine
+  function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // filter engine
+  function filterForm() {
+    var form,
+      name,
+      filterName,
+      rating,
+      filterRating,
+      genre,
+      filterGenre,
+      year1,
+      year2,
+      ul,
+      li,
+      itemName,
+      i,
+      txtValueName,
+      filtery1,
+      filtery2;
+
+    form = document.getElementById("filterForm");
+    name = document.getElementById("filterName");
+    rating = document.getElementById("filterRating");
+    genre = document.getElementById("filterGenre");
+    year1 = document.getElementById("filteryear1");
+    year2 = document.getElementById("filteryear2");
+
+    filterName = name.value.toUpperCase();
+    filterRating = rating.options[rating.selectedIndex].text.toUpperCase();
+    filterGenre = genre.options[genre.selectedIndex].text.toUpperCase();
+    filtery1 = year1.options[year1.selectedIndex].text.toUpperCase();
+    filtery2 = year2.options[year2.selectedIndex].text.toUpperCase();
+
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+    for (i = 0; i < li.length; i++) {
+      itemName = li[i].getElementsByTagName("a")[0];
+      itemRating = li[i].getElementsByTagName("span")[0];
+      itemGenre = li[i].getElementsByTagName("span")[2];
+      itemYear = li[i].getElementsByTagName("span")[3];
+      txtValueName = itemName.textContent || itemName.innerText;
+      txtValueRating = itemRating.textContent || itemRating.innerText;
+      txtValueGenre = itemGenre.textContent || itemGenre.innerText;
+      txtValueYear = itemYear.textContent || itemYear.innerText;
+
+      if (
+        txtValueName.toUpperCase().indexOf(filterName) > -1 &&
+        (txtValueRating.toUpperCase() == filterRating &&
+          txtValueGenre.toUpperCase() == filterGenre &&
+          (txtValueYear.toUpperCase() >= filtery1 &&
+            txtValueYear.toUpperCase() <= filtery2))
+      ) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // sort engine
+  function sortMe() {
+    var ul = document.getElementById('myUL'),
+        para = ul.getElementsByClassName('foo'),
+        nameAsc = document.getElementById("sortEng"),
+        sortName = nameAsc.options[nameAsc.selectedIndex].text;
+        
+        if (sortName == "Name Descending") {
+          
+    var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent > b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+        else if (sortName == "Name Ascending") {
+          var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent < b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+  }
+</script>
+
+</body>
+</html>

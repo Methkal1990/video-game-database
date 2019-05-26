@@ -1,0 +1,40 @@
+---
+test: a
+---
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Videogame</title>
+    {% include css.html %}
+</head>
+<body>
+{% include navigation.html %}
+<div>title</div>
+<div>portrait</div>
+    <nav id = "technics">
+    </nav>
+
+         {% for item in site.data.games %}
+            <h3>{{ item.name }}</h3>
+            <h4>{{item.portrait}}</h4>
+                {% endfor %}
+
+        <div>franchise</div>
+        <div>description</div>
+        <div>genre</div>
+        <div>theme</div>
+        <div>platform</div>
+        <div>release</div>
+        <div>game modes</div>
+        <div>player perspective</div>
+    </div>
+    <div id = "links">
+        <div>developer</div>
+        <div>publisher</div>
+        <div>official WEB</div>
+        <div>shop</div>
+        <div>trailer</div>
+    </div>
+</body>
+</html>

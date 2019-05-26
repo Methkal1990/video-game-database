@@ -1,0 +1,83 @@
+---
+test : a
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videojuegos</title>
+    {% include css.html %}
+    <link rel="stylesheet" href="swiper/swiper.min.css">
+    <link rel="stylesheet" href="./kleyton.css">
+    <script rel="script" src="./kleyton.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+        {% include navigation.html %}
+    <div id="container">
+        <h1 class=".l-heading text-secondary">Latest Games</h1>
+        <div id="slider">
+            <div class="element1 visible">ELEMENT 1</div>
+            <div class="element2 visible">ELEMENT 2</div>
+            <div class="element3 visible">ELEMENT 3</div>
+            <div class="element4 visible">ELEMENT 4</div>
+            <div class="element5">ELEMENT 5</div>
+            <div class="element6">ELEMENT 6</div>
+            <div class="element7">ELEMENT 7</div>
+            <div class="element8">ELEMENT 8</div>
+
+        </div>
+        <div id="sliderButton">
+            <div class="sliderButton1" onclick="showSliderElementsButton(0)"></div><!-- MUST BEGIN THE PARAMETER WHITH 0 -->
+            <div class="sliderButton2" onclick="showSliderElementsButton(1)"></div>
+        </div>
+
+    </div>
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                    {% for game in site.videogames %}
+                    
+                <div class="swiper-slide">
+                        <a href="{{game.url}}">
+
+                            <div class="imageBox">
+                                <img src="{{game.image}}" alt="my image">
+                            </div>
+                        </a>
+                    <div class="details">
+                        <h3>{{game.name}}<br><span>{{game.genre}}</span></h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+            <!-- Initialize Swiper -->
+    <script type="text/javascript" src="swiper/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 60,
+                stretch: 0,
+                depth: 10,
+                modifier: 1,
+                slideShadows: true,
+                
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+        swiper.slideTo(1, false,false);
+    </script>
+    {% include footer.html %}
+    {% include scripts.html%}
+</body>
+</html>

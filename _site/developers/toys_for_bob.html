@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Toys for Bob</title>
+    
+<link rel="stylesheet" href="../css/library.css">
+<link rel="stylesheet" href="../css/methkal-style.css" />
+</head>
+<body>
+<nav class="navbar">
+      <span class="open-slide">
+        <a href="#" onclick="openSlideMenu()" id="toggle">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+          </svg>
+        </a>
+      </span>
+    <ul class="navbar-nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/categories.html">Categories</a></li>
+        <li><a href="/AboutUs.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="AboutUs.html">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+<div id = "principal">
+        <section id="article">
+                <div class="container">
+                    <div class="page-container">
+                        <article class="card text-light">
+                            <img class="game-image" src="../../img/dev1.jpg" alt="">
+                            <div class="headline">
+                                  <h1 class="l-heading">Toys for Bob</h1>
+                                  
+                               
+                                    
+                            </div>
+                            <div class="meta">
+                                <small>
+                                    <i class="fas fa-user"></i>Established in 1989
+                                </small>
+                            </div>
+                            Toys for Bob is a band of inventors, makers, and magicians who have been developing whimsical, charming AAA games since 1989. We play in a former military hangar that’s been converted into a colorful, tiki-themed, dog-friendly paradise just 20 minutes north of the San Francisco Golden Gate bridge. Best known for inventing the “Toys to Life” genre with Skylanders, we are a team of out-of-the-box thinkers who are driven to inspire love, joy, and laughter through epic AAA entertainment. If you love games, are great at what you do, and don’t take yourself too seriously, we’d love for you to be a part of the family! Come join an Activision studio that’s part of Fortune’s “100 Best Companies to Work For”.
+                        </article>
+          
+                        <aside id="categories" class="card">
+                            <h2>More info</h2>
+                            <ul class="list">
+                                   
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Country</a></li>
+                                <div class="dev-info">United States</div>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Status</a></li>
+                                <div class="dev-info">active</div>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Parent Company</a></li>
+                                <div class="dev-info">Activision</div>
+                                <li style="border-bottom: none"><a href="#"><i class="fas fa-chevron-right"></i>Last 3 Games</a>
+                                    <ol>
+                                            <li><a href="">Star Control-1990</a></li>
+                                            <li><a href="">Tony Hawk's Downhill Jam-2006</a></li>
+                                            <li><a href="../videogames/Spyro-Reignited-Trilogy">Spyro Reignited Trilogy-2018</a></li>
+                                        </ol>
+                                </li>
+                                
+                            </ul>
+                        </aside>
+          
+                        <aside class="card">
+                            <h2>Want to know more</h2>
+                            <p>Check the official website of the company in the link below</p>
+                            <a href="https://www.toysforbob.com/" class="site-btn">Official site</a>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+        <p>
+            ODB 2019, All rights Reserved
+        </p>
+        <p>
+            Privacy Policy | Terms Of Use
+        </p>
+    </footer>
+            <script>
+  function openSlideMenu() {
+    document.getElementById("side-menu").style.width = "250px";
+    //document.getElementById('main').style.marginLeft='250px';
+  }
+  function closeSlideMenu() {
+    document.getElementById("side-menu").style.width = "0";
+    //document.getElementById('main').style.marginLeft='0';
+  }
+
+  // search engine
+  function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // filter engine
+  function filterForm() {
+    var form,
+      name,
+      filterName,
+      rating,
+      filterRating,
+      genre,
+      filterGenre,
+      year1,
+      year2,
+      ul,
+      li,
+      itemName,
+      i,
+      txtValueName,
+      filtery1,
+      filtery2;
+
+    form = document.getElementById("filterForm");
+    name = document.getElementById("filterName");
+    rating = document.getElementById("filterRating");
+    genre = document.getElementById("filterGenre");
+    year1 = document.getElementById("filteryear1");
+    year2 = document.getElementById("filteryear2");
+
+    filterName = name.value.toUpperCase();
+    filterRating = rating.options[rating.selectedIndex].text.toUpperCase();
+    filterGenre = genre.options[genre.selectedIndex].text.toUpperCase();
+    filtery1 = year1.options[year1.selectedIndex].text.toUpperCase();
+    filtery2 = year2.options[year2.selectedIndex].text.toUpperCase();
+
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+    for (i = 0; i < li.length; i++) {
+      itemName = li[i].getElementsByTagName("a")[0];
+      itemRating = li[i].getElementsByTagName("span")[0];
+      itemGenre = li[i].getElementsByTagName("span")[2];
+      itemYear = li[i].getElementsByTagName("span")[3];
+      txtValueName = itemName.textContent || itemName.innerText;
+      txtValueRating = itemRating.textContent || itemRating.innerText;
+      txtValueGenre = itemGenre.textContent || itemGenre.innerText;
+      txtValueYear = itemYear.textContent || itemYear.innerText;
+
+      if (
+        txtValueName.toUpperCase().indexOf(filterName) > -1 &&
+        (txtValueRating.toUpperCase() == filterRating &&
+          txtValueGenre.toUpperCase() == filterGenre &&
+          (txtValueYear.toUpperCase() >= filtery1 &&
+            txtValueYear.toUpperCase() <= filtery2))
+      ) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // sort engine
+  function sortMe() {
+    var ul = document.getElementById('myUL'),
+        para = ul.getElementsByClassName('foo'),
+        nameAsc = document.getElementById("sortEng"),
+        sortName = nameAsc.options[nameAsc.selectedIndex].text;
+        
+        if (sortName == "Name Descending") {
+          
+    var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent > b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+        else if (sortName == "Name Ascending") {
+          var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent < b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+  }
+</script>
+
+</div>
+</body>
+</html>

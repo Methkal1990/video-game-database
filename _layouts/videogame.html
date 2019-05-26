@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.name }}</title>
+    {% include css.html %}
+</head>
+<body>
+{% include navigation.html %}
+
+<div id = "principal">
+        <section id="article">
+                <div class="container">
+                    <div class="page-container">
+                        <article class="card text-light">
+                            <img class="game-image" src="../../{{ page.image }}" alt="">
+                            <div class="headline">
+                                  <h1 class="l-heading">{{page.name}}</h1>
+                                  
+                                  <div class="category category-ent">
+                                        {{ page.genre }}
+                                    </div>
+                                    
+                            </div>
+                            <div class="meta">
+                                <small>
+                                    <i class="fas fa-user"></i>Released in {{page.release}}
+                                </small>
+                            </div>
+                            <div class="card card-info bg-info my-1">
+                                <div class="flex">
+                                    <div class="flex-item"><div class="underline text-small my-1">Franchise</div><br>{{ page.franchise }}</div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Theme</div><br>{{ page.theme }}</div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Platform</div><br>{{ page.platform }}</div>
+                                   
+                                    {% assign developer = site.developers | where:"developer_id", page.developer_id | first %}
+                                    <div class="flex-item"><div class="underline text-small my-1">Developer</div><br><a class="text-light" href="{{ developer.url }}">{{ developer.name}}</a></div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Shop</div><br><a class="text-light" href="{{ page.shop }}">Buy the game</a></div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Shop</div><br><a class="text-light" href="{{ page.shop }}">Buy the game</a></div>
+                                </div>
+                                
+                                        
+                                
+                            </div>
+                            
+                                    <h3 class="text-light my-2t underline">Overview</h3>
+                                    <div class="page-container">
+                                        <div>{{ page.description }}</div>
+                                    </div>
+                                
+                            
+                        </article>
+          
+                        <aside id="categories" class="card">
+                            <h2>Categories</h2>
+                            <ul class="list">
+                                {% for game in site.videogames %}
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> {{game.genre}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </aside>
+          
+                        <aside class="card">
+                            <h2>Want to know more</h2>
+                            <p>Check the official website of the game in the link below</p>
+                            <a href="{{page.official}}" class="site-btn">Official site</a>
+                        </aside>
+                    </div>
+                    <div class="container">
+                        <h3 class="text-light py-3t underline">Trailer</h3>
+                        <div class="page-container">
+                            <div>{{page.trailer}}</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        {% include footer.html %}
+        {% include scripts.html%}
+</body>
+</html>

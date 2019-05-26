@@ -1,0 +1,61 @@
+---
+test: a
+---
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    {% include css.html %}
+</head>
+<title>{{page.name}}</title>
+<body>
+{% include navigation.html %}
+<div class="wrapper">
+
+  <div id="about">
+          <h1 class="lg-heading text-light my-2t">About <span class="text-secondary">Us</span></h1>
+          <h2 class="sm-heading text-light my-3">Who are we ?</h2>
+          <div class="about-info">
+            <img src="img/about.jpg" alt="" class="bio-image" />
+            <div class="bio">
+              <h3 class="text-secondary">
+                BIO
+              </h3>
+              <p>
+                A Group of students in ITB (institut tecnologic de barcelona) who are enthusiastic about web development and videgames programming.
+              </p>
+            </div>
+            <div class="job job-1">
+              <h3 class="text-light">Methkal</h3>
+              <h6 class="text-secondary py-1tb">Full stack developer</h6>
+              <p>
+                Implements the frontend categories, about and contact pages and managing the project.
+              </p>
+            </div>
+            <div class="job job-2">
+              <h3 class="text-light">Esteban</h3>
+              <h6 class="text-secondary py-1tb">Backend Development</h6>
+              <p>
+                Implements Jekyll logic in the project
+              </p>
+            </div>
+            <div class="job job-3">
+              <h3 class="text-light">Kleyton</h3>
+              <h6 class="text-secondary py-1tb">frontend developer</h6>
+              <p>
+                Implements the homepage
+              </p>
+            </div>
+            <div class="job job-4">
+              <h3 class="text-light">Alex</h3>
+              <h6 class="text-secondary py-1tb">frontend developer and data expert</h6>
+              <p>
+                Gathering project data and implementing the content.
+              </p>
+            </div>
+          </div>
+        </div>
+</div>
+      {% include footer.html %}
+{% include scripts.html%}
+</body>
+</html>

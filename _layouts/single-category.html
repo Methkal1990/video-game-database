@@ -1,0 +1,147 @@
+---
+title : categories
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/methkal-style.css" />
+    
+    <title>Categories</title>
+  </head>
+  <body>
+    <!-- navigation begin -->
+    {% include navigation.html %}
+    
+    <!-- navigation end -->
+    <div id="main">
+      <section class="hero-section">
+        <input
+          class="search-field"
+          type="text"
+          placeholder="serach for games"
+        />
+
+        <h1 class="hero-title">Our collection</h1>
+      </section>
+      <section class="grid-filter">
+            <div class="topbar-filter">
+      
+                    <p>Found <span>9 games</span> in total</p>
+                    <label>Sort by:</label>
+                    <select>
+                        <option value="popularity">Popularity Descending</option>
+                        <option value="popularity">Popularity Ascending</option>
+                        <option value="rating">Rating Descending</option>
+                        <option value="rating">Rating Ascending</option>
+                        <option value="date">Release date Descending</option>
+                        <option value="date">Release date Ascending</option>
+                    </select>
+                </div>
+                <div class="asideSortFilter"></div>
+        <div class="categories-grid">
+            {% for game in site.videogames %}
+          <div class="game-card">
+            <div class="game-photo game-opacity" style="background: url({{game.image}}) no-repeat center center/cover;"></div>
+            <div class="game-info">
+              <a href="{{ game.url }}">{{ game.name }}</a>
+              <div class="game-rating">
+                <i class="fas fa-star"></i>
+                {{ game.rating }}/<span>10</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <!-- filter -->
+        
+                <div class="sidebar">
+                    <div class="searh-form">
+                        <h4 class="sb-title">Search for Video Games</h4>
+                        <form class="form-style-1">
+                            <div class="row">
+                                <div class="col-md-12 form-it">
+                                    <label>Video Game name</label>
+                                    <input type="text" placeholder="Enter name">
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label>Rating Range</label>
+                                    <select>
+                                      <option>Select rating</option>
+                                      <option>1 star</option>
+                                      <option>2 stars</option>
+                                      <option>3 stars</option>
+                                      <option>4 stars</option>
+                                      <option>5 stars</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label>Genres</label>
+                                    <select>
+
+                                      <option value="range">Select genre</option>
+                                      <option value="range">FPS</option>
+                                      <option value="saab">Action</option>
+                                      <option value="saab">Adventure</option>
+                                      <option value="saab">Arcade</option>
+                                      <option value="saab">RTS</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 form-it">
+                                    <label>Release Year</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <select>
+                                              <option value="range">From</option>
+                                              <option value="number">10</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select>
+                                              <option value="range">To</option>
+                                              <option value="number">20</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input class="submit" type="submit" value="search">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+      </section>
+      <footer>
+          <p>
+              IGDB 2019, All rights Reserved
+          </p>
+          <p>
+              Privacy Policy | Terms Of Use
+          </p>
+      </footer>
+    <script>
+      function openSlideMenu() {
+        document.getElementById("side-menu").style.width = "250px";
+        //document.getElementById('main').style.marginLeft='250px';
+      }
+      function closeSlideMenu() {
+        document.getElementById("side-menu").style.width = "0";
+        //document.getElementById('main').style.marginLeft='0';
+      }
+    </script>
+  </body>
+</html>

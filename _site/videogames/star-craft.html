@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Craft 2</title>
+    
+<link rel="stylesheet" href="../css/library.css">
+<link rel="stylesheet" href="../css/methkal-style.css" />
+</head>
+<body>
+<nav class="navbar">
+      <span class="open-slide">
+        <a href="#" onclick="openSlideMenu()" id="toggle">
+          <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+          </svg>
+        </a>
+      </span>
+    <ul class="navbar-nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/categories.html">Categories</a></li>
+        <li><a href="/AboutUs.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="AboutUs.html">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<div id = "principal">
+        <section id="article">
+                <div class="container">
+                    <div class="page-container">
+                        <article class="card text-light">
+                            <img class="game-image" src="../../img/img1.jpg" alt="">
+                            <div class="headline">
+                                  <h1 class="l-heading">Star Craft 2</h1>
+                                  
+                                  <div class="category category-ent">
+                                        RTS
+                                    </div>
+                                    
+                            </div>
+                            <div class="meta">
+                                <small>
+                                    <i class="fas fa-user"></i>Released in 2019
+                                </small>
+                            </div>
+                            <div class="card card-info bg-info my-1">
+                                <div class="flex">
+                                    <div class="flex-item"><div class="underline text-small my-1">Franchise</div><br></div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Theme</div><br></div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Platform</div><br>PC</div>
+                                   
+                                    
+                                    <div class="flex-item"><div class="underline text-small my-1">Developer</div><br><a class="text-light" href="/developers/blizzard.html">Blizzard Entertainment</a></div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Shop</div><br><a class="text-light" href="https://eu.shop.battle.net/es-es/family/starcraft-ii">Buy the game</a></div>
+                                    <div class="flex-item"><div class="underline text-small my-1">Shop</div><br><a class="text-light" href="https://eu.shop.battle.net/es-es/family/starcraft-ii">Buy the game</a></div>
+                                </div>
+                                
+                                        
+                                
+                            </div>
+                            
+                                    <h3 class="text-light my-2t underline">Overview</h3>
+                                    <div class="page-container">
+                                        <div>a great new game that we all like very much</div>
+                                    </div>
+                                
+                            
+                        </article>
+          
+                        <aside id="categories" class="card">
+                            <h2>Categories</h2>
+                            <ul class="list">
+                                
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Adventure</a></li>
+                                
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> Action</a></li>
+                                
+                                <li><a href="#"><i class="fas fa-chevron-right"></i> RTS</a></li>
+                                
+                            </ul>
+                        </aside>
+          
+                        <aside class="card">
+                            <h2>Want to know more</h2>
+                            <p>Check the official website of the game in the link below</p>
+                            <a href="https://starcraft2.com/es-es/" class="site-btn">Official site</a>
+                        </aside>
+                    </div>
+                    <div class="container">
+                        <h3 class="text-light py-3t underline">Trailer</h3>
+                        <div class="page-container">
+                            <div><iframe width="560" height="315" src="https://www.youtube.com/embed/aVtXac6if14" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+        <p>
+            ODB 2019, All rights Reserved
+        </p>
+        <p>
+            Privacy Policy | Terms Of Use
+        </p>
+    </footer>
+        <script>
+  function openSlideMenu() {
+    document.getElementById("side-menu").style.width = "250px";
+    //document.getElementById('main').style.marginLeft='250px';
+  }
+  function closeSlideMenu() {
+    document.getElementById("side-menu").style.width = "0";
+    //document.getElementById('main').style.marginLeft='0';
+  }
+
+  // search engine
+  function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // filter engine
+  function filterForm() {
+    var form,
+      name,
+      filterName,
+      rating,
+      filterRating,
+      genre,
+      filterGenre,
+      year1,
+      year2,
+      ul,
+      li,
+      itemName,
+      i,
+      txtValueName,
+      filtery1,
+      filtery2;
+
+    form = document.getElementById("filterForm");
+    name = document.getElementById("filterName");
+    rating = document.getElementById("filterRating");
+    genre = document.getElementById("filterGenre");
+    year1 = document.getElementById("filteryear1");
+    year2 = document.getElementById("filteryear2");
+
+    filterName = name.value.toUpperCase();
+    filterRating = rating.options[rating.selectedIndex].text.toUpperCase();
+    filterGenre = genre.options[genre.selectedIndex].text.toUpperCase();
+    filtery1 = year1.options[year1.selectedIndex].text.toUpperCase();
+    filtery2 = year2.options[year2.selectedIndex].text.toUpperCase();
+
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName("foo");
+    for (i = 0; i < li.length; i++) {
+      itemName = li[i].getElementsByTagName("a")[0];
+      itemRating = li[i].getElementsByTagName("span")[0];
+      itemGenre = li[i].getElementsByTagName("span")[2];
+      itemYear = li[i].getElementsByTagName("span")[3];
+      txtValueName = itemName.textContent || itemName.innerText;
+      txtValueRating = itemRating.textContent || itemRating.innerText;
+      txtValueGenre = itemGenre.textContent || itemGenre.innerText;
+      txtValueYear = itemYear.textContent || itemYear.innerText;
+
+      if (
+        txtValueName.toUpperCase().indexOf(filterName) > -1 &&
+        (txtValueRating.toUpperCase() == filterRating &&
+          txtValueGenre.toUpperCase() == filterGenre &&
+          (txtValueYear.toUpperCase() >= filtery1 &&
+            txtValueYear.toUpperCase() <= filtery2))
+      ) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
+  // sort engine
+  function sortMe() {
+    var ul = document.getElementById('myUL'),
+        para = ul.getElementsByClassName('foo'),
+        nameAsc = document.getElementById("sortEng"),
+        sortName = nameAsc.options[nameAsc.selectedIndex].text;
+        
+        if (sortName == "Name Descending") {
+          
+    var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent > b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+        else if (sortName == "Name Ascending") {
+          var paraArr = [].slice.call(para).sort(function (a, b) {
+        return a.textContent < b.textContent ? 1 : -1;
+    });
+    paraArr.forEach(function (p) {
+        ul.appendChild(p);
+    });
+        }
+
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+---
+test: indice developers
+---
+
+
+{% for developer in site.developers %}
+<h2>
+    <a href="{{ developer.url }}">
+        {{ developer.name }}
+    </a>
+</h2>
+{% endfor %}

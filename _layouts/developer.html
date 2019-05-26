@@ -1,0 +1,67 @@
+---
+test: a
+---
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.name }}</title>
+    {% include css.html %}
+</head>
+<body>
+{% include navigation.html %}
+<div id = "principal">
+        <section id="article">
+                <div class="container">
+                    <div class="page-container">
+                        <article class="card text-light">
+                            <img class="game-image" src="../../{{ page.image }}" alt="">
+                            <div class="headline">
+                                  <h1 class="l-heading">{{page.name}}</h1>
+                                  
+                               
+                                    
+                            </div>
+                            <div class="meta">
+                                <small>
+                                    <i class="fas fa-user"></i>Established in {{page.established}}
+                                </small>
+                            </div>
+                            {{ page.description }}
+                        </article>
+          
+                        <aside id="categories" class="card">
+                            <h2>More info</h2>
+                            <ul class="list">
+                                   
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Country</a></li>
+                                <div class="dev-info">{{ page.country }}</div>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Status</a></li>
+                                <div class="dev-info">{{ page.status }}</div>
+                                <li><a href="#"><i class="fas fa-chevron-right"></i>Parent Company</a></li>
+                                <div class="dev-info">{{ page.parentCompany }}</div>
+                                <li style="border-bottom: none"><a href="#"><i class="fas fa-chevron-right"></i>Last 3 Games</a>
+                                    <ol>
+                                            <li><a href="{{ page.1stLink }}">{{ page.1st }}</a></li>
+                                            <li><a href="{{ page.2ndLink }}">{{ page.2nd }}</a></li>
+                                            <li><a href="{{ page.3thLink }}">{{ page.3th }}</a></li>
+                                        </ol>
+                                </li>
+                                
+                            </ul>
+                        </aside>
+          
+                        <aside class="card">
+                            <h2>Want to know more</h2>
+                            <p>Check the official website of the company in the link below</p>
+                            <a href="{{page.official}}" class="site-btn">Official site</a>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            {% include footer.html %}
+            {% include scripts.html%}
+</div>
+</body>
+</html>
